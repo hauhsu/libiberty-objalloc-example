@@ -10,5 +10,6 @@ The list uses **objallo** to manage the dynamic allocated memory spaces for its 
 ```
 $ gcc *.c -o list
 $ ./list
-
+list[0] = hello
+list[1] = world
 ```
