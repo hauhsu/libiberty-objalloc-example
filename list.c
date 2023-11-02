@@ -21,8 +21,8 @@ struct list* list_create(int size)
 
   ret->size = size;
   ret->last_index = -1;
-  ret->entry = malloc(sizeof(void*) * size);
   ret->memory = objalloc_create();
+  ret->entry = objalloc_alloc(ret->memory, sizeof(void*) * size);
   return ret;
 }
 
@@ -47,7 +47,6 @@ void list_print(struct list *l)
 void list_free(struct list *l)
 {
   objalloc_free(l->memory);
-  free(l->entry);
   free(l);
 }
 
