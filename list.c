@@ -47,6 +47,8 @@ void list_print(struct list *l)
 void list_free(struct list *l)
 {
   objalloc_free(l->memory);
+  free(l->entry);
+  free(l);
 }
 
 
